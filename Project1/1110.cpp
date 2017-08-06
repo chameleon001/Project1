@@ -21,3 +21,49 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작성하시오.
 
 4
 */
+/*
+int main() {
+	int num;
+	int a, b;
+	int c;
+	int e;
+	int d = 0;
+
+	scanf("%d", &num);
+	while (1)
+	{
+		a = num / 10;
+		b = num % 10;
+		c = (a + b) % 10;
+		e = b * 10 + c;
+		d++;
+		if (e == num) {
+			break;
+		}
+		num = e;
+	}
+	printf("%d", d);
+}
+*/ //....
+
+#include <stdio.h>
+
+int main(void) {
+	int number;
+	int count = 0;
+	int A, B, C, Add;
+	scanf("%d", &number);
+	Add = number;
+	while (Add != number || count == 0) {
+		A = Add / 10;
+		B = Add % 10;
+		C = (A + B) % 10;
+		A = B; B = C;
+		Add = A * 10 + B;
+		count++;
+	}
+
+	printf("%d\n", count);
+
+}
+
