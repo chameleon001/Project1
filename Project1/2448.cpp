@@ -72,8 +72,8 @@ https://www.acmicpc.net/problem/2448
 
 char arr[1000][1000];
 //int x = 0;
-int z = 0;
-void abc(int numx, int x) {
+void abc(int numx, int y) {
+    int x = y;
 
     arr[x][numx - 1] = '*';
     arr[1 + x][numx - 2] = '*';
@@ -83,10 +83,10 @@ void abc(int numx, int x) {
     arr[2 + x][numx - 1] = '*';
     arr[2 + x][numx - 2] = '*';
     arr[2 + x][numx - 3] = '*';
-    if (z<8) {
-        z++;
-        abc(numx + 3, 3);
-        abc(numx - 3, 3);
+    x = x + 3;
+    if (x<24) {
+        abc(numx + 3, x);
+        abc(numx - 3, x);
     }
 
 }
