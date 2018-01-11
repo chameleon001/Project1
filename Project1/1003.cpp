@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-
+			
 	int dp[41][2] = { 0 };
 
 	int n = 0, t = 0;
