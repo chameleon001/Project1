@@ -60,3 +60,36 @@ int main(){
         counta=0;
     }
 }
+
+/*
+ #include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+int main(){
+
+ string input;
+ bool isInvalid = false;
+ char temp;
+ stack<char> parenthesis;
+ cin >> input;
+ for(int i=0; i<input.size(); i++){
+  temp = input[i];
+  if(temp == ')'){
+   if(parenthesis.empty()){
+    isInvalid = true;
+    break;
+   }
+   else parenthesis.pop();
+  }
+  else parenthesis.push(temp);
+ }
+ if(isInvalid) cout << "잘못된 괄호식입니다." << endl;
+ else if(!parenthesis.empty()) cout << "잘못된 괄호식입니다." << endl;
+ else cout << "올바른 괄호식입니다." << endl;
+
+ return 0;
+}
+
+ */
