@@ -28,17 +28,52 @@ X....
  *
  */
 
-
-#include<stdio.h>
+#include<cstdio>
 #include<string>
 
 int main(){
     int n;
-    string a;
+    char arr[100][100];
+    int x=0,y=0,z=0,a=0;
 
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=n; j++){
+    scanf("%d",&n);
 
+    for(int i=0; i<n; i++){
+            scanf("%s",arr[i]); 
+    }
+    for(int i =0; i<n; i++){
+    
+        x=0;
+        a=0;
+        for(int j=0; j<n; j++){
+            if(arr[i][j]=='.' && arr[i][j+1]=='.'){
+                x=1;
+            }
+            if(arr[j][i]=='.' && arr[j+1][i]=='.'){
+                a=1;
+            }
+        }
+        if(x==1){
+            y++;
+        }
+        if(a==1){
+            z++;
         }
     }
+     printf("%d %d",y,z);
 }
+/*
+#include<cstdio>
+int n, r, c;
+char s[101][101];
+int main() {
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) scanf("%s", s[i]);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n - 1; j++)
+            r += s[i][j] == '.'&&s[i][j + 1] == '.'&&s[i][j + 2] ^ '.',
+            c += s[j][i] == '.'&&s[j + 1][i] == '.'&&s[j + 2][i] ^ '.';
+    printf("%d %d", r, c);
+    return 0;
+}
+*/
