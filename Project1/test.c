@@ -11,9 +11,9 @@ int main()
 	for (i = 0; i<n; i++)
 	{
 		scanf("%s", &name[i]);
-	} // πÆ¿⁄ø≠ ¿‘∑¬
+	} // Î¨∏ÏûêÏó¥ ÏûÖÎ†•
 
-	//¡§∑ƒ strcmp => ±≥√º strcpy
+	//Ï†ïÎ†¨ strcmp => ÍµêÏ≤¥ strcpy
 
 	for (i = 0; i<n - 1; i++)
 	{
