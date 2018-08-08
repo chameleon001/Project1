@@ -1,35 +1,32 @@
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-	char name[5][10];
-	int i, j, n;
-	char  tmp[10];
-	n = sizeof(name) / sizeof(char[10]);
+#include<iostream>
+#include<string>
+using namespace std;
 
+int main(){
+    string str1,str2;
 
-	for (i = 0; i<n; i++)
-	{
-		scanf("%s", &name[i]);
-	} // 문자열 입력
+    cin >>str1>>str2;
 
-	//정렬 strcmp => 교체 strcpy
+    if((int)str1.at(2)>(int)str2.at(2)){
+        cout <<str1.at(2)<<str1.at(1)<<str1.at(0);
+    }else if((int)str1.at(2)<(int)str2.at(2)){
+        cout <<str2.at(2)<<str2.at(1)<<str2.at(0);
+    }else{
+        if((int)str1.at(1)>(int)str2.at(1)){ 
 
-	for (i = 0; i<n - 1; i++)
-	{
-		for (j = 0; j<n - 1 - i; j++)
-		{
-			if (strcmp(name[j], name[j + 1]) > 0)
-			{
-				strcpy(tmp, name[j]);
-				strcpy(name[j], name[j + 1]);
-				strcpy(name[j + 1], tmp);
-			}
-		}
-	}
-	for (i = 0; i<n; i++)
-	{
-		printf(" %s \n", name[i]);
-	}
-	return 0;
+        cout <<str1.at(2)<<str1.at(1)<<str1.at(0);
+        }else if((int)str1.at(1)<(int)str2.at(1)){
+        
+        cout <<str2.at(2)<<str2.at(1)<<str2.at(0);
+        }else{
+            if((int)str1.at(0)>(int)str2.at(0)){ 
+                
+        cout <<str1.at(2)<<str1.at(1)<<str1.at(0);
+            }else if((int)str1.at(0)<(int)str2.at(0)){
+                
+        cout <<str2.at(2)<<str2.at(1)<<str2.at(0);
+            }
+            
+        }
+    }
 }

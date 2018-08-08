@@ -1,0 +1,47 @@
+// WORD SEARCH WITH VECTOR
+ 
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <iomanip>
+ 
+using namespace std;
+ 
+// fin에서 라인단위로 vector에 넣는다
+void fileRead(ifstream& fin, vector<string>& v)
+{
+    string line;
+ 
+    while (getline(fin, line))
+        v.push_back(line);
+}
+ 
+// 벡터에서 word를 찾아서 출력한다
+void search(vector<string>& v, string& word)
+{
+    for (int i = 0; i < v.size(); i++) {
+        int index = v[i].find(word);
+        if (index != -1)
+            cout << "line " << setw(3) << i+1 << " : " << v[i] << endl;
+    }
+}
+ 
+int main()
+{
+    vector<string> v;
+    ifstream fin("C:\\Users\\강병익\\documents\\visual studio 2015\\Projects\\Coursera_CCPP\\Coursera_CCPP\\22_wordSearch.cpp");
+    if (!fin) {
+        cout << "에러 입력파일";
+        return 0;
+    }
+ 
+    fileRead(fin, v);
+    string word;
+    cout << "enter word to search : ";
+    cin >> word;
+    search(v, word);
+}
+
+
+출처: http://drbeeeye.tistory.com/76 [dr. Bee Eye]
