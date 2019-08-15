@@ -260,3 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 codility/FrogRiverOne
+.vscode/launch.json
+.vscode/tasks.json
+*.exe
