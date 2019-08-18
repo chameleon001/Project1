@@ -26,7 +26,7 @@ int main() {
  
     
     while(cin >> k && k) {            //0을 입력 받을 때 까지 무한루프
-        for(int i=0; i<k; i++) {
+         for(int i=0; i<k; i++) {
             cin >> lotto[i];
         }
         
